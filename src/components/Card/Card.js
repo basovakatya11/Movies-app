@@ -5,6 +5,8 @@ import { format } from 'date-fns'
 import 'inter-ui/inter.css'
 import GenresList from '../GenresList'
 
+import noPoster from './image-not-found-svg.png'
+
 export default class Card extends React.Component {
   truncateString = (string, maxLength) => {
     if (string.length > maxLength) {
@@ -24,12 +26,13 @@ export default class Card extends React.Component {
       genres,
     } = this.props
 
+    const image = posterPath ? `https://image.tmdb.org/t/p/original${posterPath}` : noPoster
     const plot = this.truncateString(overview, 203)
-    const formatedDate = format(new Date(releaseDate), 'MMMM dd, yyyy')
+    const formatedDate = releaseDate ? format(new Date(releaseDate), 'MMMM dd, yyyy') : null
 
     return (
       <div className="card">
-        <img className="card__image" alt="movie" src={`https://image.tmdb.org/t/p/original${posterPath}`} />
+        <img className="card__image" alt="movie" src={image} />
         <div className="card__content content">
           <h3 className="content__title">{originalTitle}</h3>
           <div className="content__date">{formatedDate}</div>

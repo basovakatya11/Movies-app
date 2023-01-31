@@ -1,0 +1,19 @@
+.message-fail-net{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    align-items: center;
+    height: 500px;
+    justify-content: center;
+}
+
+.warning-1{
+    font-family: 'Stencil', 'Impact', 'Franklin Gothic Medium', Arial, sans-serif;
+    font-size: xx-large;
+    color: white;
+}
+
+.warning-2{
+    font-family: monospace, system-ui;
+    color: white
+}
