@@ -10,11 +10,11 @@ export default class TmdbService {
     return body
   }
 
-  async getMoviesInfo() {
+  async getMoviesInfo(value, page = 1) {
     const result = await this.getResource(
-      'https://api.themoviedb.org/3/search/movie?api_key=afd2636738a1f7ebde459a2c19fe4930&language=en-US&page=1&query=return'
+      `https://api.themoviedb.org/3/search/movie?api_key=afd2636738a1f7ebde459a2c19fe4930&language=en-US&page=${page}&query=${value}`
     )
-    return result.results
+    return result
   }
 
   async getGenresInfo() {

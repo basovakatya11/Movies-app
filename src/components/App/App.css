@@ -1,19 +1,29 @@
 .app {
   width: 1010px;
+  min-height: 740px;
   background: #ffffff;
   margin-right: auto;
   margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 13px 36px
 }
 
 html {
   background: #e5e5e5;
 }
 
-.spin {
+.spin-1 {
   margin: 20px 0;
   margin-bottom: 20px;
   padding: 30px 50px;
   text-align: center;
   background: rgba(0, 0, 0, 0.05);
   border-radius: 4px;
+}
+.spin-2 {
+  margin: 20px 0;
+  padding: 30px 50px;
+  text-align: center;
 }
