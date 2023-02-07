@@ -18,7 +18,7 @@ html {
 
 .card__content {
   padding: 20px;
-  padding-right: 10px
+  padding-right: 10px;
 }
 
 .content__header {
@@ -39,7 +39,7 @@ html {
 
 .header__progress {
   display: flex;
-  border: 3px solid #E90000;
+  border: 3px solid #e90000;
   width: 35px;
   height: 35px;
   border-radius: 50%;
@@ -54,15 +54,15 @@ html {
 }
 
 .header__progress.orange {
-  border-color: #E97E00;
+  border-color: #e97e00;
 }
 
 .header__progress.yellow {
-  border-color: #E9D100;
+  border-color: #e9d100;
 }
 
 .header__progress.green {
-  border-color: #66E900;
+  border-color: #66e900;
 }
 
 .content__date {
