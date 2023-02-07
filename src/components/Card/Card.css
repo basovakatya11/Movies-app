@@ -3,7 +3,7 @@ html {
 }
 
 .card {
-  width: 454px;
+  width: 470px;
   background: #ffffff;
   display: flex;
   filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15));
@@ -18,15 +18,51 @@ html {
 
 .card__content {
   padding: 20px;
+  padding-right: 10px
 }
 
-.content__title {
+.content__header {
   font-size: 20px;
   line-height: 28px;
   font-weight: normal;
   color: #000000;
   margin-top: 0;
   margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content__rate {
+  margin-top: 10px;
+}
+
+.header__progress {
+  display: flex;
+  border: 3px solid #E90000;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  justify-self: end;
+  align-self: start;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.header__progress.orange {
+  border-color: #E97E00;
+}
+
+.header__progress.yellow {
+  border-color: #E9D100;
+}
+
+.header__progress.green {
+  border-color: #66E900;
 }
 
 .content__date {

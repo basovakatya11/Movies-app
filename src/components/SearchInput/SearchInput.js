@@ -6,7 +6,7 @@ import './SearchInput.css'
 
 export default class SearchInput extends React.Component {
   state = {
-    label: 'return',
+    label: this.props.label,
   }
 
   debouncedSearchFunc = debounce((value) => {
