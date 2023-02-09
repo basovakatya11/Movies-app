@@ -1,8 +1,8 @@
 .ant-card {
   border-radius: 0;
-  height: fit-content
+  height: fit-content;
 }
-.ant-card .ant-card-body{
+.ant-card .ant-card-body {
   display: grid;
   grid-column-gap: 20px;
   background: #ffffff;
@@ -13,7 +13,7 @@
 }
 
 @media (max-width: 555px) {
-  .ant-card .ant-card-body{
+  .ant-card .ant-card-body {
     grid-template-columns: 83fr 68fr 249fr;
     grid-column-gap: 0;
     min-height: 245px;
@@ -30,11 +30,11 @@
   width: 183px;
   height: 100%;
   grid-row: 1/6;
-  grid-column: 1/2
+  grid-column: 1/2;
 }
 
 @media (max-width: 555px) {
-  .card__image{
+  .card__image {
     width: 60px;
     grid-row: 1/4;
     margin: 6px 13px 0 10px;
@@ -55,12 +55,12 @@
 }
 
 @media (max-width: 555px) {
-  .card__header{
+  .card__header {
     grid-column: 2/4;
   }
 }
 
-.card__release-date{
+.card__release-date {
   grid-column: 2/3;
   grid-row: 2/3;
   font-size: 12px;
@@ -71,19 +71,19 @@
 }
 
 @media (max-width: 555px) {
-  .card__release-date{
+  .card__release-date {
     grid-column: 2/4;
   }
 }
 
-.card__genres-list{
+.card__genres-list {
   grid-column: 2/3;
   grid-row: 3/4;
   margin-right: 20px;
 }
 
 @media (max-width: 555px) {
-  .card__genres-list{
+  .card__genres-list {
     grid-column: 2/4;
   }
 }
@@ -96,7 +96,7 @@
 }
 
 @media (max-width: 555px) {
-  .card__rate{
+  .card__rate {
     grid-column: 3/4;
   }
 }
@@ -136,11 +136,11 @@
   margin-right: 20px;
   overflow-y: hidden;
   grid-column: 2/3;
-  grid-row: 4/5
+  grid-row: 4/5;
 }
 
 @media (max-width: 555px) {
-  .card__plot{
+  .card__plot {
     grid-column: 1/4;
     grid-row: 4/5;
     margin: 0 10px;
