@@ -52,7 +52,9 @@ class MovieCard extends React.Component {
 
     return (
       <Card hoverable className="card">
-        <img className="card__image" alt={`movie ${originalTitle}`} src={imageUrl} />
+        <div className="card__image">
+          <img alt={`movie ${originalTitle}`} src={imageUrl} />
+        </div>
         <div className="card__header">
           <div className="header__title">{originalTitle}</div>
           <div className={progressClassNames}>{Math.round(generalRating * 10) / 10}</div>
