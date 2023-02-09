@@ -1,0 +1,27 @@
+.pagination{
+    display: flex;
+    justify-content: center;
+}
+
+.ant-pagination {
+    margin: 36px auto 20px auto;
+    display: inline-block;
+}
+
+.ant-pagination .ant-pagination-item-active {
+    background-color: #1890FF;
+}
+.ant-pagination .ant-pagination-item-active a{
+    color: white
+}
+
+.ant-select-single:not(.ant-select-customize-input) .ant-select-selector,
+.ant-select .ant-select-arrow{
+    display: none;
+}
+
+@media (max-width: 555px) {
+    .ant-pagination{
+        margin-top: 20px;
+    }
+}

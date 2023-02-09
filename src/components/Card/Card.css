@@ -1,40 +1,104 @@
-html {
+.ant-card {
+  border-radius: 0;
+  height: fit-content
+}
+.ant-card .ant-card-body{
+  display: grid;
+  grid-column-gap: 20px;
+  background: #ffffff;
+  grid-row-gap: 7px;
+  padding: 0;
   font-family: 'Inter', 'system-ui';
+  min-height: 279px;
 }
 
-.card {
-  width: 470px;
-  background: #ffffff;
-  display: flex;
-  filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15));
-  margin-bottom: 35px;
+@media (max-width: 555px) {
+  .ant-card .ant-card-body{
+    grid-template-columns: 83fr 68fr 249fr;
+    grid-column-gap: 0;
+    min-height: 245px;
+  }
+}
+
+.ant-card .ant-card-body::before,
+.ant-card .ant-card-body::after {
+  display: none;
 }
 
 .card__image {
+  object-fit: cover;
   width: 183px;
   height: 100%;
-  object-fit: cover;
+  grid-row: 1/6;
+  grid-column: 1/2
 }
 
-.card__content {
-  padding: 20px;
-  padding-right: 10px;
+@media (max-width: 555px) {
+  .card__image{
+    width: 60px;
+    grid-row: 1/4;
+    margin: 6px 13px 0 10px;
+  }
 }
 
-.content__header {
+.card__header {
   font-size: 20px;
   line-height: 28px;
   font-weight: normal;
   color: #000000;
-  margin-top: 0;
-  margin-bottom: 7px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  margin-top: 10px;
 }
 
-.content__rate {
-  margin-top: 10px;
+@media (max-width: 555px) {
+  .card__header{
+    grid-column: 2/4;
+  }
+}
+
+.card__release-date{
+  grid-column: 2/3;
+  grid-row: 2/3;
+  font-size: 12px;
+  line-height: 22px;
+  color: #827e7e;
+  height: 22px;
+  margin-bottom: 2px;
+}
+
+@media (max-width: 555px) {
+  .card__release-date{
+    grid-column: 2/4;
+  }
+}
+
+.card__genres-list{
+  grid-column: 2/3;
+  grid-row: 3/4;
+  margin-right: 20px;
+}
+
+@media (max-width: 555px) {
+  .card__genres-list{
+    grid-column: 2/4;
+  }
+}
+
+.card__rate {
+  margin-top: 3px;
+  margin-bottom: 10px;
+  grid-column: 2/3;
+  grid-row: 5/6;
+}
+
+@media (max-width: 555px) {
+  .card__rate{
+    grid-column: 3/4;
+  }
 }
 
 .header__progress {
@@ -50,7 +114,7 @@ html {
   justify-self: end;
   align-self: start;
   flex-shrink: 0;
-  margin-right: 10px;
+  margin: 0 10px;
 }
 
 .header__progress.orange {
@@ -65,20 +129,20 @@ html {
   border-color: #66e900;
 }
 
-.content__date {
-  font-size: 12px;
-  line-height: 22px;
-  color: #827e7e;
-  height: 22px;
-  margin-bottom: 9px;
-}
-
-.content__plot {
-  width: 228px;
-  height: 129px;
+.card__plot {
   font-size: 12px;
   line-height: 22px;
   color: #000000;
-  margin-top: 7px;
+  margin-right: 20px;
   overflow-y: hidden;
+  grid-column: 2/3;
+  grid-row: 4/5
+}
+
+@media (max-width: 555px) {
+  .card__plot{
+    grid-column: 1/4;
+    grid-row: 4/5;
+    margin: 0 10px;
+  }
 }

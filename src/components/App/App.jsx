@@ -1,11 +1,11 @@
 import React from 'react'
 import store from 'store'
-import { Spin, Alert, Typography } from 'antd'
+import { Spin, Alert, Typography, Layout } from 'antd'
 
 import CardList from '../CardList'
 import SearchInput from '../SearchInput'
 import PaginationComponent from '../Pagination'
-import TmdbService from '../../services/tmdb-service'
+import TmdbService from '../../services/TmdbService'
 import Header from '../Header'
 import { Provider } from '../TMDBServiceContext'
 
@@ -110,6 +110,7 @@ export default class App extends React.Component {
     const { guestSessionId } = this.state
     if (rate === 0) {
       this.tmdbService.deleteRatedMovie(id, guestSessionId).catch(this.onError)
+      return
     }
     this.tmdbService.setMovieRating(id, guestSessionId, rate).catch(this.onError)
   }
@@ -204,6 +205,8 @@ export default class App extends React.Component {
       ratedMoviesList,
     } = this.state
 
+    const { Content } = Layout
+
     if (error) {
       return <Alert message="Error" description={error.message} type="error" showIcon />
     }
@@ -219,6 +222,11 @@ export default class App extends React.Component {
         <Spin tip="loading" size="large" />
       </div>
     ) : null
+
+    const pagination =
+      tabNumber === '1' || ratedMoviesList.length > 0 ? (
+        <PaginationComponent onPageChange={this.onPageChange} currentPage={currentPage} totalItems={totalItems} />
+      ) : null
     const listAndPagination =
       isMoviesLoaded && results.length > 0 ? (
         <>
@@ -227,7 +235,7 @@ export default class App extends React.Component {
             onRateChange={this.onRateChange}
             ratedMoviesList={ratedMoviesList}
           />
-          <PaginationComponent onPageChange={this.onPageChange} currentPage={currentPage} totalItems={totalItems} />
+          {pagination}
         </>
       ) : null
 
@@ -237,15 +245,19 @@ export default class App extends React.Component {
     const searchInput =
       tabNumber === '1' ? <SearchInput onSearchMovies={this.onChangeSearchValue} label={searchValue} /> : null
     return (
-      <Provider value={genres}>
-        <div className="app">
-          <Header onChange={this.onTabChange} tabNumber={tabNumber} />
-          {searchInput}
-          {spinner}
-          {listAndPagination}
-          {noResultMessage}
-        </div>
-      </Provider>
+      <div className="app-container">
+        <Layout>
+          <Provider value={genres}>
+            <Content>
+              <Header onChange={this.onTabChange} tabNumber={tabNumber} />
+              {searchInput}
+              {spinner}
+              {listAndPagination}
+              {noResultMessage}
+            </Content>
+          </Provider>
+        </Layout>
+      </div>
     )
   }
 }

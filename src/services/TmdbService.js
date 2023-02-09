@@ -67,8 +67,21 @@ export default class TmdbService {
 
   transformResultObj(result) {
     const totalItems = result.total_results > 10000 ? 10000 : result.total_results
+    const results = result.results.map((movieObj) => {
+      const newMovieObj = {
+        id: movieObj.id,
+        overview: movieObj.overview,
+        originalTitle: movieObj.original_title,
+        releaseDate: movieObj.release_date,
+        posterPath: movieObj.poster_path,
+        genreIds: movieObj.genre_ids,
+        generalRating: movieObj.vote_average,
+      }
+      if ('rating' in movieObj) newMovieObj.rating = movieObj.rating
+      return newMovieObj
+    })
     return {
-      results: result.results,
+      results,
       totalItems,
     }
   }

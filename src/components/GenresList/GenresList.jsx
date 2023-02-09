@@ -1,7 +1,8 @@
 import React from 'react'
 import './GenresList.css'
+import PropTypes from 'prop-types'
 
-export default class GenresList extends React.Component {
+class GenresList extends React.Component {
   minId = 11
 
   render() {
@@ -21,3 +22,10 @@ export default class GenresList extends React.Component {
     return <div className="content__genres genres">{genreBlocks}</div>
   }
 }
+
+GenresList.propTypes = {
+  genres: PropTypes.array.isRequired,
+  genreIds: PropTypes.array.isRequired,
+}
+
+export default GenresList

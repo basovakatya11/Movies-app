@@ -1,6 +1,7 @@
 import React from 'react'
 import { Tabs } from 'antd'
 import './Header.css'
+import PropTypes from 'prop-types'
 
 const items = [
   {
@@ -19,6 +20,11 @@ function Header({ onChange, tabNumber }) {
       <Tabs defaultActiveKey="1" activeKey={tabNumber} items={items} onChange={onChange} />
     </div>
   )
+}
+
+Header.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  tabNumber: PropTypes.oneOf(['1', '2']).isRequired,
 }
 
 export default Header

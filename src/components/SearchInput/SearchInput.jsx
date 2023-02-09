@@ -1,10 +1,11 @@
 import React from 'react'
 import { Input } from 'antd'
 import { debounce } from 'lodash'
+import PropTypes from 'prop-types'
 
 import './SearchInput.css'
 
-export default class SearchInput extends React.Component {
+class SearchInput extends React.Component {
   state = {
     label: this.props.label,
   }
@@ -33,3 +34,9 @@ export default class SearchInput extends React.Component {
     )
   }
 }
+
+SearchInput.propTypes = {
+  label: PropTypes.string.isRequired,
+}
+
+export default SearchInput
