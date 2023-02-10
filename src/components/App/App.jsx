@@ -7,7 +7,7 @@ import SearchInput from '../SearchInput'
 import PaginationComponent from '../Pagination'
 import TmdbService from '../../services/TmdbService'
 import Header from '../Header'
-import { Provider } from '../TMDBServiceContext'
+import { Provider } from '../../context/TMDBServiceContext'
 
 import './App.css'
 

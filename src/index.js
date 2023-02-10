@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { Offline, Online } from 'react-detect-offline'
 
 import App from './components/App'
-import MessageFailNet from './MessageFailNet'
+import MessageFailNet from './components/MessageFailNet'
 
 function NetworkStateFunction() {
   return (

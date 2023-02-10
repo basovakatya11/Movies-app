@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 
 import 'inter-ui/inter.css'
 import GenresList from '../GenresList'
-import { Consumer } from '../TMDBServiceContext'
+import { Consumer } from '../../context/TMDBServiceContext'
 
 import noPoster from './image-not-found.jpg'
 
