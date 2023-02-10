@@ -23,7 +23,7 @@
   display: none;
 }
 
-.card__image img{
+.card__image img {
   object-fit: cover;
   width: 183px;
   height: 100%;
@@ -37,7 +37,7 @@
 }
 
 @media (max-width: 555px) {
-  .card__image img{
+  .card__image img {
     width: 60px;
   }
   .card__image {
@@ -118,7 +118,6 @@
     margin-left: 20px;
   }
 }
-
 
 .header__progress {
   display: flex;
